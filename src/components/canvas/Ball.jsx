@@ -1,8 +1,7 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
-  Float,
   OrbitControls,
   Preload,
   useTexture,
@@ -22,48 +21,62 @@ const Ball = (props) => {
   }, [decal]);
 
   return (
-      <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-        <ambientLight intensity={1.5} />
-        <directionalLight position={[0, 0, 0.5]} intensity={1} />
-        <mesh castShadow receiveShadow scale={2.75}>
-          <icosahedronGeometry args={[1, 1]} />
-          <meshStandardMaterial
-              color="#fff8eb"
-              polygonOffset
-              polygonOffsetFactor={-5}
-              flatShading
-          />
-          <Decal
-              position={[0, 0, 1]}
-              rotation={[2 * Math.PI, 0, 6.25]}
-              scale={1}
-              map={decal}
-              flatShading
-          />
-        </mesh>
-      </Float>
+    <>
+      <ambientLight intensity={1.5} />
+      <directionalLight position={[0, 0, 0.5]} intensity={1} />
+      <mesh castShadow receiveShadow scale={2.75}>
+        <icosahedronGeometry args={[1, 1]} />
+        <meshStandardMaterial
+            color="#fff8eb"
+            polygonOffset
+            polygonOffsetFactor={-5}
+            flatShading
+        />
+        <Decal
+            position={[0, 0, 1]}
+            rotation={[2 * Math.PI, 0, 6.25]}
+            scale={1}
+            map={decal}
+            flatShading
+        />
+      </mesh>
+    </>
   );
 };
 
 const BallCanvas = ({ icon }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
+    <div
+      style={{ width: "100%", height: "100%" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
+    >
       <Canvas
-          frameloop="demand"
-          dpr={[1, 2]}
-          gl={(canvas) => {
-            canvas.toneMapping = THREE.LinearToneMapping;
-            canvas.outputColorSpace = THREE.SRGBColorSpace;
-            canvas.physicallyCorrectLights = false;
-            canvas.toneMappingExposure = 1.0;
-            return canvas;
-          }}
+        frameloop="demand"
+        dpr={[1, 2]}
+        gl={(canvas) => {
+          canvas.toneMapping = THREE.LinearToneMapping;
+          canvas.outputColorSpace = THREE.SRGBColorSpace;
+          canvas.physicallyCorrectLights = false;
+          canvas.toneMappingExposure = 1.0;
+          return canvas;
+        }}
       >
         <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls enableZoom={false} />
+          {isHovered && (
+            <OrbitControls
+              enableZoom={false}
+            />
+          )}
           <Ball imgUrl={icon} />
         </Suspense>
         <Preload all />
       </Canvas>
+    </div>
   );
 };
 
