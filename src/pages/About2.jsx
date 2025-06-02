@@ -22,7 +22,7 @@ const About2 = () => {
                         <Contact />
                         <StarsCanvas />
 
-                    <div className="max-container mx-auto px-4 flex justify-center pb-4">
+                    <div className="container mx-auto px-4 flex justify-center pb-4">
                         <CTA />
                     </div>
                 </div>
