@@ -1,11 +1,12 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Footer, Navbar } from "./components";
-import { About, Contact, Home, Projects } from "./pages";
+import { About, Contact, Home, Projects,  } from "./pages";
+import About2 from "./pages/About2.jsx";
 
 const App = () => {
     return (
-        <main className='bg-slate-300/20'>
+        <main className='bg-amber-400'>
             <Router>
                 <Navbar />
                 <Routes>
@@ -15,7 +16,7 @@ const App = () => {
                         element={
                             <>
                                 <Routes>
-                                    <Route path='/about' element={<About />} />
+                                    <Route path='/about' element={<About2 />} />
                                     <Route path='/projects' element={<Projects />} />
                                     <Route path='/contact' element={<Contact />} />
                                 </Routes>
