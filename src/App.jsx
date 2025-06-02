@@ -6,7 +6,7 @@ import About2 from "./pages/About2.jsx";
 
 const App = () => {
     return (
-        <main className='bg-amber-400'>
+        <main className='animated-bg min-h-screen'>
             <Router>
                 <Navbar />
                 <Routes>

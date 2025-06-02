@@ -1,4 +1,3 @@
-
 import { CTA } from "../components";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -17,16 +16,15 @@ const About2 = () => {
                     <Hero />
                 </div>
                 <div className='relative z-0'>
+                    <About />
+                    <Experience />
+                    <Tech />
+                        <Contact />
+                        <StarsCanvas />
 
-                <About />
-                <Experience />
-                <Tech />
-                    <Contact />
-                    <StarsCanvas />
-                </div>
-                <div className="container">
-                    <CTA />
-
+                    <div className="max-container mx-auto px-4 flex justify-center pb-4">
+                        <CTA />
+                    </div>
                 </div>
             </div>
 

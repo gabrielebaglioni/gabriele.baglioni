@@ -75,7 +75,7 @@ body:has(.card[data-color="green"]:hover) {
     }
 
     .cta-text {
-        @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
+        @apply text-white-100 font-extrabold flex-1 text-3xl max-md:text-center;
     }
 }
 
@@ -377,5 +377,36 @@ body:has(.card[data-color="green"]:hover) {
         0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
         -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
         -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+    }
+}
+
+.animated-bg {
+    background: linear-gradient(
+        225deg,
+        #0f172a 0%,      /* blu scurissimo */
+        #1e1b4b 10%,     /* indaco scuro */
+        #3b0764 20%,     /* viola profondo */
+        #4c1d95 30%,     /* viola scuro */
+        #0f766e 40%,     /* teal scuro */
+        #064e3b 50%,     /* verde scuro */
+        #374151 60%,     /* grigio blu scuro */
+        #1f2937 70%,     /* grigio molto scuro */
+        #312e81 80%,     /* indaco profondo */
+        #1e1b4b 90%,     /* indaco scuro */
+        #0f172a 100%     /* blu scurissimo */
+    );
+    background-size: 500% 500%;
+    animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
