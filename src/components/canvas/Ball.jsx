@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -45,15 +45,9 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
       style={{ width: "100%", height: "100%" }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
     >
       <Canvas
         frameloop="demand"
@@ -67,11 +61,9 @@ const BallCanvas = ({ icon }) => {
         }}
       >
         <Suspense fallback={<CanvasLoader />}>
-          {isHovered && (
-            <OrbitControls
-              enableZoom={false}
-            />
-          )}
+          <OrbitControls
+            enableZoom={false}
+          />
           <Ball imgUrl={icon} />
         </Suspense>
         <Preload all />
