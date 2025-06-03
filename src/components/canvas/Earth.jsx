@@ -12,7 +12,7 @@ const Earth = ({ isMobile }) => {
       object={earth.scene}
       scale={isMobile ? 0.9 : 2.75}
       position-x={0}
-      position-y={isMobile ? 0.3 : 0.5}
+      position-y={isMobile ? 2 : 0.5}
       position-z={0}
       rotation-y={0}
     />
