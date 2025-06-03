@@ -21,21 +21,20 @@ const Navbar = () => {
     }, [isPlayingMusic]);
 
     return (
-        <header className='header'>
-            <div className="flex items-center gap-4">
-            <NavLink to='/'>
-                <img src={logo} alt='logo' className='w-18 h-18 object-contain' />
-            </NavLink>
-
+        <header className='header flex justify-between items-center py-3 px-4 sm:px-6 lg:px-8 w-full'>
+            <div className="flex items-center gap-3 sm:gap-4">
                 <img
                     src={!isPlayingMusic ? soundoff : soundon}
                     alt='jukebox'
                     onClick={() => setIsPlayingMusic(!isPlayingMusic)}
                     className='w-8 h-8 cursor-pointer object-contain'
                 />
+                <NavLink to='/'>
+                    <img src={logo} alt='logo' className='w-12 h-12 sm:w-18 sm:h-18 object-contain' />
+                </NavLink>
             </div>
 
-            <nav className='flex text-lg gap-7 font-medium'>
+            <nav className='flex text-sm sm:text-lg gap-3 sm:gap-7 font-medium'>
                 <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600" : "text-white-100" }>
                     About my work
                 </NavLink>
