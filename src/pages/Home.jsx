@@ -1,38 +1,21 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 
-import sakura from "../assets/Big-City-Life.mp3";
 import { HomeInfo, Loader } from "../components";
-import { soundoff, soundon } from "../assets/icons";
 import { Bird, Island, Plane, Sky } from "../models";
 import {CanvasLoader} from "../components/index2.js";
 
 const Home = () => {
-  const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
-
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
-
-  useEffect(() => {
-    if (isPlayingMusic) {
-      audioRef.current.play();
-    }
-
-    return () => {
-      audioRef.current.pause();
-    };
-  }, [isPlayingMusic]);
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
 
     // If screen width is less than 768px, adjust the scale and position
     if (window.innerWidth < 768) {
-      screenScale = [1.2, 1.2, 1.2];
-      screenPosition = [0, -1, 0];
+      screenScale = [1.0, 1.0, 1.0];
+      screenPosition = [0, -0.5, 0];
     } else {
       screenScale = [3, 3, 3];
       screenPosition = [0, -4, -4];
@@ -45,8 +28,8 @@ const Home = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.65, 0.65, 0.65];
-      screenPosition = [0, -6.5, -50];
+      screenScale = [0.5, 0.5, 0.5];
+      screenPosition = [0, -6.5, -55];
     } else {
       screenScale = [1, 1, 1];
       screenPosition = [0, -6.5, -43.4];
@@ -104,15 +87,6 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
-
-      <div className='absolute bottom-2 left-2'>
-        <img
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt='jukebox'
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
-        />
-      </div>
     </section>
   );
 };
