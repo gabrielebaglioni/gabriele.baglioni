@@ -22,19 +22,15 @@ const Computers = ({ isMobile }) => {
 
     return (
         <mesh>
-            {/* Luci aggiuntive */}
-            <ambientLight intensity={1.5} />
-            <directionalLight intensity={2} position={[10, 10, 10]} />
-            <hemisphereLight intensity={0.15} groundColor="black" />
-            <spotLight
-                position={[-20, 50, 10]}
-                angle={0.12}
-                penumbra={1}
-                intensity={10}
+            {/* Simplified lighting for performance and compatibility */}
+            <ambientLight intensity={1.0} />
+            <directionalLight
+                intensity={2.5}
+                position={[10, 10, 10]}
                 castShadow
-                shadow-mapSize={1024}
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
             />
-            <pointLight intensity={1.5} />
 
             <primitive
                 object={computer.scene}
@@ -70,13 +66,12 @@ const ComputersCanvas = () => {
             shadows
             dpr={[1, 2]}
             camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={(canvas) => {
-                canvas.toneMapping = THREE.LinearToneMapping;
-                canvas.outputColorSpace = THREE.SRGBColorSpace;
-                canvas.physicallyCorrectLights = false;
-                canvas.toneMappingExposure = 1.0;
-                return canvas;
+            gl={{
+                toneMapping: THREE.LinearToneMapping,
+                outputColorSpace: THREE.SRGBColorSpace,
+                toneMappingExposure: 1.0,
             }}
+            useLegacyLights
         >
             <Suspense fallback={<CanvasLoader />}>
                 <OrbitControls
