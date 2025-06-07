@@ -10,15 +10,11 @@ const Computers = ({ isMobile }) => {
     // Modifica dei materiali per migliorarne la resa visiva
     useEffect(() => {
         computer.scene.traverse((child) => {
-            if (child.isMesh) {
-                child.castShadow = true;
-                child.receiveShadow = true;
-                if (child.material) {
-                    child.material.metalness = 0;
-                    child.material.roughness = 1;
-                    if (child.material.map) {
-                        child.material.map.colorSpace = THREE.SRGBColorSpace;
-                    }
+            if (child.isMesh && child.material) {
+                child.material.metalness = 0;
+                child.material.roughness = 1;
+                if (child.material.map) {
+                    child.material.map.colorSpace = THREE.SRGBColorSpace;
                 }
             }
         });
@@ -26,20 +22,20 @@ const Computers = ({ isMobile }) => {
 
     return (
         <mesh>
-            <hemisphereLight intensity={0.15} groundColor='black' />
-            <pointLight intensity={1} />
-            <spotLight
-                position={[-20, 50, 10]}
-                angle={0.12}
-                penumbra={1}
-                intensity={1}
+            {/* Simplified lighting for performance and compatibility */}
+            <ambientLight intensity={1.0} />
+            <directionalLight
+                intensity={2.5}
+                position={[10, 10, 10]}
                 castShadow
-                shadow-mapSize={1024}
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
             />
+
             <primitive
                 object={computer.scene}
-                scale={isMobile ? 0.7 : 0.75}
-                position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+                scale={isMobile ? 0.40 : 0.75}
+                position={isMobile ? [-2.4, -1.7, -1.5] : [0, -3.75, -1.5]}
                 rotation={[-0.01, -0.2, -0.1]}
             />
         </mesh>
@@ -71,9 +67,11 @@ const ComputersCanvas = () => {
             dpr={[1, 2]}
             camera={{ position: [20, 3, 5], fov: 25 }}
             gl={{
-                preserveDrawingBuffer: true,
-                toneMapping: THREE.ACESFilmicToneMapping,
+                toneMapping: THREE.LinearToneMapping,
+                outputColorSpace: THREE.SRGBColorSpace,
+                toneMappingExposure: 1.0,
             }}
+            useLegacyLights
         >
             <Suspense fallback={<CanvasLoader />}>
                 <OrbitControls
