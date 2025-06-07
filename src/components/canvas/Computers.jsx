@@ -60,6 +60,12 @@ const ComputersCanvas = () => {
         };
     }, []);
 
+    const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
+
+    if (isMobile && isAndroid) {
+        return null;
+    }
+
     return (
         <Canvas
             frameloop="demand"
