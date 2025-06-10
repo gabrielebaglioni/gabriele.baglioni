@@ -1,12 +1,13 @@
 import * as THREE from 'three';
 import { ContactShadows, Environment, PerspectiveCamera } from '@react-three/drei';
 import Geometry from './Geometry';
+import smallroomHdr from '../../assets/static/smallroom.hdr';
 
 const Shapes = () => {
   return (
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 25]} aspect={1} fov={30} near={1} far={40} />
-      <Environment files="/src/assets/static/smallroom.hdr" />
+      <Environment files={smallroomHdr} />
       <ContactShadows position={[0, -3.5, 0]} opacity={0.65} scale={40} blur={1} far={9} />
 
       {/* Gem */}
