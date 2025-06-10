@@ -1,8 +1,8 @@
 import { useRef } from "react";
 
 import {Globe} from "../../components/Globe.jsx";
-import Card from "../../components/card.tsx";
 import { IconCloudDemo } from "../../components/IconCloudDemo.jsx";
+import Card from "../../components/Card.jsx";
 
 
 const GridLayout = () => {
