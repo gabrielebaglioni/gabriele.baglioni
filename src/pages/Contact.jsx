@@ -72,7 +72,8 @@ const Contact = () => {
   };
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container'>
+    <section className='animated-bg'>
+        <div className='relative flex lg:flex-row flex-col max-container' >
       {alert.show && <Alert {...alert} />}
 
       <div className='flex-1 min-w-[50%] flex flex-col'>
@@ -166,6 +167,7 @@ const Contact = () => {
           </Suspense>
         </Canvas>
       </div>
+        </div>
     </section>
   );
 };

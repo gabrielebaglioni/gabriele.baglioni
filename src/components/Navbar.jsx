@@ -22,10 +22,10 @@ const Navbar = () => {
     }, [isPlayingMusic]);
 
     const getInactiveLinkColor = (pathname) => {
-        if (pathname === '/about' || pathname === '/projects') {
+        if (pathname === '/about' || pathname === '/projects' || pathname === '/contact') {
             return "text-white-100";
         }
-        return "text-slate-600";
+        return "text-slate-800";
     };
     
     const inactiveColor = getInactiveLinkColor(location.pathname);
