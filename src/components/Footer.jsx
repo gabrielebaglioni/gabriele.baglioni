@@ -5,7 +5,6 @@ import { socialLinks } from "../constans/index.js";
 const Footer = () => {
     return (
         <footer className='footer font-poppins'>
-            <hr className='border-teal-950' />
 
             <div className='footer-container'>
                 <p>

@@ -23,7 +23,9 @@ const App = () => {
                                             <Route path='/projects' element={<AboutMeWrapper />} />
                                             <Route path='/contact' element={<Contact />} />
                                         </Routes>
+{/*
                                         <Footer />
+*/}
                                     </>
                                 }
                             />
