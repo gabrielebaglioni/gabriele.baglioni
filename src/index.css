@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: scroll;
+}
+
 :root {
     --blue-rgb: 237 245 255;
     --green-rgb: 125 161 35;
@@ -410,21 +414,6 @@ body:has(.card[data-color="green"]:hover) {
         background-position: 0% 50%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @theme {
     --color-primary: #030412;
