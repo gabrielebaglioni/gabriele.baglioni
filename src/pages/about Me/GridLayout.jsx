@@ -1,8 +1,7 @@
 import { useRef } from "react";
 
 import {Globe} from "../../components/Globe.jsx";
-import CopyEmailButton from "../../components/CopyEmailButton.jsx";
-import Card from "../../components/card.jsx";
+import Card from "../../components/card.tsx";
 import { IconCloudDemo } from "../../components/IconCloudDemo.jsx";
 
 
