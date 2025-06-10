@@ -2,7 +2,8 @@ import { useRef } from "react";
 
 import {Globe} from "../../components/Globe.jsx";
 import { IconCloudDemo } from "../../components/IconCloudDemo.jsx";
-import Card from "../../components/Card.jsx";
+import Card from "../../components/card.jsx";
+import codingPov from "../../../public/assets/coding-pov.png";
 
 
 const GridLayout = () => {
@@ -14,9 +15,9 @@ const GridLayout = () => {
         {/* Grid 1 */}
         <div className="flex items-end grid-default-color grid-1">
           <img
-            src="public/assets/coding-pov.png"
+            src={codingPov}
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
-          />
+           alt="A point-of-view image of hands on a keyboard, coding."/>
           <div className="z-10">
             <p className="headtext">tolk about blockchain</p>
             <p className="subtext">
