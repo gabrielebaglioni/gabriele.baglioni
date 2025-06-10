@@ -9,7 +9,6 @@ import {
 import * as THREE from "three";
 
 import CanvasLoader from "../Loader2.jsx";
-import ErrorBoundary from "../ErrorBoundary.jsx";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -46,27 +45,37 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  return (
-    <ErrorBoundary>
-      <Canvas
-        frameloop='demand'
-        dpr={[1, 2]}
-        gl={{
-          preserveDrawingBuffer: true,
-          toneMapping: THREE.LinearToneMapping,
-          outputColorSpace: THREE.SRGBColorSpace,
-          toneMappingExposure: 1.0,
-        }}
-        useLegacyLights
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls enableZoom={false} />
-          <Ball imgUrl={icon} />
-        </Suspense>
+  const fallbackUI = (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%', textAlign: 'center', color: 'white', fontFamily: 'monospace', fontSize: '12px' }}>
+      Render<br/>Error
+    </div>
+  );
 
-        <Preload all />
-      </Canvas>
-    </ErrorBoundary>
+  const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    return fallbackUI;
+  }
+
+  return (
+    <Canvas
+      frameloop='demand'
+      dpr={[1, 2]}
+      gl={{
+        preserveDrawingBuffer: true,
+        toneMapping: THREE.LinearToneMapping,
+        outputColorSpace: THREE.SRGBColorSpace,
+        toneMappingExposure: 1.0,
+      }}
+      useLegacyLights
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls enableZoom={false} />
+        <Ball imgUrl={icon} />
+      </Suspense>
+
+      <Preload all />
+    </Canvas>
   );
 };
 
