@@ -2,11 +2,14 @@ import React, { useRef, useEffect, useState, useMemo } from "react";
 import { Float } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
+import hit1Sound from '../../assets/static/sounds/hit1.ogg';
+import hit2Sound from '../../assets/static/sounds/hit2.ogg';
+import hit3Sound from '../../assets/static/sounds/hit3.ogg';
 
 const soundEffects = [
-  new Audio("src/assets/static/sounds/hit1.ogg"),
-  new Audio("/src/assets/static/sounds/hit2.ogg"),
-  new Audio("src/assets/static/sounds/hit3.ogg"),
+  new Audio(hit1Sound),
+  new Audio(hit2Sound),
+  new Audio(hit3Sound),
 ];
 
 const materialParams = [

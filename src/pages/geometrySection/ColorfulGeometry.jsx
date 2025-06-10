@@ -5,9 +5,9 @@ import { useGSAP } from '@gsap/react';
 
 const slice = {
   primary: {
-    first_name: "Gabriele",
-    last_name: "Baglioni",
-    tag_line: "Creative Developer",
+    first_name: "colori",
+    last_name: "forme",
+    tag_line: "e suoni",
   },
 };
 
