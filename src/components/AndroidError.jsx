@@ -14,7 +14,7 @@ const AndroidError = () => (
     borderRadius: '15px',
     background: 'rgba(0,0,0,0.5)',
     position: 'absolute',
-    top: '65%',
+    top: '75%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     maxWidth: '80%',
