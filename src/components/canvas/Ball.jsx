@@ -9,6 +9,7 @@ import {
 import * as THREE from "three";
 
 import CanvasLoader from "../Loader2.jsx";
+import ErrorBoundary from "../ErrorBoundary.jsx";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -46,29 +47,26 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <div
-      style={{ width: "100%", height: "100%" }}
-    >
+    <ErrorBoundary>
       <Canvas
-        frameloop="demand"
+        frameloop='demand'
         dpr={[1, 2]}
-        gl={(canvas) => {
-          canvas.toneMapping = THREE.LinearToneMapping;
-          canvas.outputColorSpace = THREE.SRGBColorSpace;
-          canvas.physicallyCorrectLights = false;
-          canvas.toneMappingExposure = 1.0;
-          return canvas;
+        gl={{
+          preserveDrawingBuffer: true,
+          toneMapping: THREE.LinearToneMapping,
+          outputColorSpace: THREE.SRGBColorSpace,
+          toneMappingExposure: 1.0,
         }}
+        useLegacyLights
       >
         <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enableZoom={false}
-          />
+          <OrbitControls enableZoom={false} />
           <Ball imgUrl={icon} />
         </Suspense>
+
         <Preload all />
       </Canvas>
-    </div>
+    </ErrorBoundary>
   );
 };
 

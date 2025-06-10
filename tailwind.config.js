@@ -22,8 +22,10 @@ export default {
         },
         blue: {
           500: "#2b77e7"
+        },
+        orange: {
+          500: "#F59E0B"
         }
-
       },
       screens: {
         xs: "450px",

@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 
 import { logo } from "../assets/images";
@@ -9,6 +9,7 @@ const Navbar = () => {
     const audioRef = useRef(new Audio(musicaDiSottofondo));
     audioRef.current.volume = 0.4;
     audioRef.current.loop = true;
+    const location = useLocation();
 
     const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
@@ -20,9 +21,18 @@ const Navbar = () => {
         }
     }, [isPlayingMusic]);
 
+    const getInactiveLinkColor = (pathname) => {
+        if (pathname === '/about' || pathname === '/projects') {
+            return "text-white-100";
+        }
+        return "text-slate-600";
+    };
+    
+    const inactiveColor = getInactiveLinkColor(location.pathname);
+
     return (
         <header className='header flex justify-between items-center py-3 px-4 sm:px-6 lg:px-8 w-full'>
-            <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-3 sm:gap-4 mr-4">
                 <img
                     src={!isPlayingMusic ? soundoff : soundon}
                     alt='jukebox'
@@ -35,10 +45,10 @@ const Navbar = () => {
             </div>
 
             <nav className='flex text-sm sm:text-lg gap-3 sm:gap-7 font-medium'>
-                <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600" : "text-white-100" }>
+                <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600" : inactiveColor }>
                     About my work
                 </NavLink>
-                <NavLink to='/projects' className={({ isActive }) => isActive ? "text-blue-600" : "text-white-100"}>
+                <NavLink to='/projects' className={({ isActive }) => isActive ? "text-blue-600" : inactiveColor}>
                     About me
                 </NavLink>
             </nav>

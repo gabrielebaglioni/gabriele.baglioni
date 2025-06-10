@@ -19,9 +19,8 @@ const About2 = () => {
                     <About />
                     <Experience />
                     <Tech />
-                        <Contact />
-                        <StarsCanvas />
-
+                    <Contact />
+                    <StarsCanvas />
                     <div className="container mx-auto px-4 flex justify-center pb-4">
                         <CTA />
                     </div>

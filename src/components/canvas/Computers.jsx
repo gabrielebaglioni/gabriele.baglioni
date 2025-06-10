@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import CanvasLoader from "../Loader2.jsx";
+import ErrorBoundary from "../ErrorBoundary";
 
 const Computers = ({ isMobile }) => {
     const computer = useGLTF("./desktop_pc/scene.gltf");
@@ -60,35 +61,32 @@ const ComputersCanvas = () => {
         };
     }, []);
 
-    const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
-
-    if (isMobile && isAndroid) {
-        return null;
-    }
-
     return (
-        <Canvas
-            frameloop="demand"
-            shadows
-            dpr={[1, 2]}
-            camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={{
-                toneMapping: THREE.LinearToneMapping,
-                outputColorSpace: THREE.SRGBColorSpace,
-                toneMappingExposure: 1.0,
-            }}
-            useLegacyLights
-        >
-            <Suspense fallback={<CanvasLoader />}>
-                <OrbitControls
-                    enableZoom={false}
-                    maxPolarAngle={Math.PI / 2}
-                    minPolarAngle={Math.PI / 2}
-                />
-                <Computers isMobile={isMobile} />
-            </Suspense>
-            <Preload all />
-        </Canvas>
+        <ErrorBoundary>
+            <Canvas
+                frameloop="demand"
+                shadows
+                dpr={[1, 2]}
+                camera={{ position: [20, 3, 5], fov: 25 }}
+                gl={{
+                    preserveDrawingBuffer: true,
+                    toneMapping: THREE.LinearToneMapping,
+                    outputColorSpace: THREE.SRGBColorSpace,
+                    toneMappingExposure: 1.0,
+                }}
+                useLegacyLights
+            >
+                <Suspense fallback={<CanvasLoader />}>
+                    <OrbitControls
+                        enableZoom={false}
+                        maxPolarAngle={Math.PI / 2}
+                        minPolarAngle={Math.PI / 2}
+                    />
+                    <Computers isMobile={isMobile} />
+                </Suspense>
+                <Preload all />
+            </Canvas>
+        </ErrorBoundary>
     );
 };
 
