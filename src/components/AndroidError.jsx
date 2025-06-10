@@ -3,7 +3,7 @@ import React from 'react';
 const AndroidError = () => (
   <div style={{
     width: '100%',
-    height: '50%',
+    height: '25%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
