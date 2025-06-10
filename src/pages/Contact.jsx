@@ -72,7 +72,7 @@ const Contact = () => {
   };
 
   return (
-    <section className='animated-bg'>
+    <section className='animated-bg min-h-screen '>
         <div className='relative flex lg:flex-row flex-col max-container' >
       {alert.show && <Alert {...alert} />}
 
