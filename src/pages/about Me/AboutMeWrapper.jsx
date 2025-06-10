@@ -1,5 +1,5 @@
-
 import { CTA } from "../../components/index.js";
+import { ColorfulGeometry } from "../geometrySection/index.js";
 import HeroAboutMe from "./heroAboutMe.jsx";
 
 
@@ -30,10 +30,11 @@ const AboutMeWrapper = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            Lorem-ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  
         </p>
+        <ColorfulGeometry />
       <hr className='border-slate-200' />
 
       <CTA />
