@@ -58,18 +58,18 @@ const ColorfulGeometry = () => {
     }, { scope: component });
 
     return (
-        <section ref={component} className="px-4 md:px-6">
+        <section ref={component} className="max-container px-4 md:px-6">
             <div className="mx-auto w-full max-w-7xl">
                 <div className="grid min-h-[65vh] grid-cols-1 items-center md:grid-cols-2">
                     <div className="relative z-10 row-span-1 row-start-1 -my-10 aspect-[1/1.3] overflow-hidden md:col-span-1 md:col-start-2 md:mt-0">
                         <Scene />
                     </div>
-                    <div className="col-start-1 md:row-start-1">
+                    <div className="col-start-1  md:row-start-1">
                         <h1
                             className="mb-2 md:mb-8 text-[clamp(3rem,20vmin,13rem)] font-extrabold leading-none tracking-tighter text-nowrap"
                             aria-label={`${slice.primary.first_name} ${slice.primary.last_name}`}
                         >
-                            <span className="block text-slate-300">
+                            <span className="block text-slate-300 py-2">
                                 {firstNameLetters.map((letter, index) => (
                                     <span key={index} className="name-animation inline-block opacity-0">{letter}</span>
                                 ))}

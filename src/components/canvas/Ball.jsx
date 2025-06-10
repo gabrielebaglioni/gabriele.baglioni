@@ -67,7 +67,6 @@ const BallCanvas = ({ icon }) => {
         outputColorSpace: THREE.SRGBColorSpace,
         toneMappingExposure: 1.0,
       }}
-      useLegacyLights
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
