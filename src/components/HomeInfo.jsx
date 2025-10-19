@@ -36,7 +36,7 @@ const HomeInfo = ({ currentStage }) => {
                     Led multiple projects to success over the years. <br /> Curious about the impact?
                 </p>
 
-                <Link to='/projects' className='neo-brutalism-white neo-btn'>
+                <Link to='/contact' className='neo-brutalism-white neo-btn'>
                     Visit my portfolio
                     <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
                 </Link>
@@ -52,7 +52,7 @@ const HomeInfo = ({ currentStage }) => {
                     I'm here — not just as a dev.
                 </p>
 
-                <Link to='/contact' className='neo-brutalism-white neo-btn'>
+                <Link to='/projects' className='neo-brutalism-white neo-btn'>
                     Let's connect
                     <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
                 </Link>
