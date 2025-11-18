@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Scene from './Scene';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 const slice = {
   primary: {
@@ -13,16 +12,20 @@ const slice = {
 
 const ColorfulGeometry = () => {
     const component = useRef(null);
+    const [hasAnimated, setHasAnimated] = useState(false);
     const firstNameLetters = slice.primary.first_name.split("");
     const lastNameLetters = slice.primary.last_name.split("");
 
-    useGSAP(() => {
+    const runAnimation = () => {
+        if (hasAnimated) return;
+        
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReducedMotion) {
-			gsap.set('.name-animation', { opacity: 1 });
-			gsap.set('.job-title', { opacity: 1 });
-			return;
-		}
+            gsap.set('.name-animation', { opacity: 1 });
+            gsap.set('.job-title', { opacity: 1 });
+            setHasAnimated(true);
+            return;
+        }
         
         const tl = gsap.timeline({delay: 0.5});
 
@@ -55,14 +58,41 @@ const ColorfulGeometry = () => {
             }
         );
 
-    }, { scope: component });
+        setHasAnimated(true);
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                        runAnimation();
+                    }
+                });
+            },
+            {
+                threshold: 0.35, // Trigger quando il 35% è visibile
+                rootMargin: '0px'
+            }
+        );
+
+        if (component.current) {
+            observer.observe(component.current);
+        }
+
+        return () => {
+            if (component.current) {
+                observer.unobserve(component.current);
+            }
+        };
+    }, [hasAnimated]);
 
     return (
         <section ref={component} className="container px-4 md:px-6">
             <div className="ml-10 mx-auto  max-w-7xl">
                 <div className="grid min-h-[65vh] grid-cols-1 items-center md:grid-cols-2">
                     <div className="relative z-10 row-span-1 row-start-1 -my-10 aspect-[1/1.3] overflow-hidden md:col-span-1 md:col-start-2 md:mt-0">
-                        <Scene />
+                        <Scene shouldAnimate={hasAnimated} />
                     </div>
                     <div className="col-start-1  md:row-start-1">
                         <h1

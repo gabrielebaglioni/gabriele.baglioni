@@ -1,10 +1,10 @@
 import { Canvas } from '@react-three/fiber';
 import Shapes from './Shapes';
 
-const Scene = () => {
+const Scene = ({ shouldAnimate }) => {
   return (
     <Canvas shadows>
-      <Shapes />
+      <Shapes shouldAnimate={shouldAnimate} />
     </Canvas>
   );
 };

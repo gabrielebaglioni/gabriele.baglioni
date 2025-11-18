@@ -12,7 +12,7 @@ export const myProjects = [
         ],
         href: "",
         logo: "",
-        image: "/assets/projects/accessories.jpg",
+        image: "/assets/projects/crypt-payment.jpg",
         tags: [
             {
                 id: 1,
@@ -49,7 +49,7 @@ export const myProjects = [
         ],
         href: "",
         logo: "",
-        image: "/assets/projects/auth-system.jpg",
+        image: "/assets/projects/houseBlock.jpg",
         tags: [
             {
                 id: 1,
@@ -75,43 +75,6 @@ export const myProjects = [
     },
     {
         id: 3,
-        title: "3D Portfolio Website",
-        description:
-            "Interactive 3D portfolio showcasing my work through immersive web experience. Features interactive island scene with mouse/touch rotation, animated 3D models, responsive design, and animated contact form.",
-        subDescription: [
-            "Built React SPA with Vite, React Three Fiber, and Drei helpers for declarative 3D rendering.",
-            "Implemented interactive island with stage-based info boxes, animated bird and plane models, and sky background.",
-            "Optimized 3D rendering for mobile devices, implemented Suspense for async model loading, and managed performance with frame-by-frame animations using useFrame hook.",
-            "Integrated EmailJS for contact form, Framer Motion for UI animations, and GSAP for complex geometry animations.",
-        ],
-        href: "",
-        logo: "",
-        image: "/assets/projects/blazor-app.jpg",
-        tags: [
-            {
-                id: 1,
-                name: "React",
-                path: "/assets/logos/react.svg",
-            },
-            {
-                id: 2,
-                name: "Three.js",
-                path: "/assets/logos/threejs.svg",
-            },
-            {
-                id: 3,
-                name: "Vite",
-                path: "/assets/logos/vitejs.svg",
-            },
-            {
-                id: 4,
-                name: "TailwindCSS",
-                path: "/assets/logos/tailwindcss.svg",
-            },
-        ],
-    },
-    {
-        id: 4,
         title: "TuttoRifiutoRifiutoTutto",
         description:
             "Angular 18 SPA for complex multimedia artistic catalog. Handles images, videos, audio, and PDFs with unified viewer, responsive Tailwind UI, and Vercel Blob Storage integration.",
@@ -123,7 +86,7 @@ export const myProjects = [
         ],
         href: "",
         logo: "",
-        image: "/assets/projects/game-engine.jpg",
+        image: "/assets/projects/tuttorifiuto.jpg",
         tags: [
             {
                 id: 1,
@@ -138,6 +101,43 @@ export const myProjects = [
             {
                 id: 3,
                 name: "Vercel",
+                path: "/assets/logos/vitejs.svg",
+            },
+            {
+                id: 4,
+                name: "TailwindCSS",
+                path: "/assets/logos/tailwindcss.svg",
+            },
+        ],
+    },
+    {
+        id: 4,
+        title: "3D Portfolio Website",
+        description:
+            "Interactive 3D portfolio showcasing my work through immersive web experience. Features interactive island scene with mouse/touch rotation, animated 3D models, responsive design, and animated contact form.",
+        subDescription: [
+            "Built React SPA with Vite, React Three Fiber, and Drei helpers for declarative 3D rendering.",
+            "Implemented interactive island with stage-based info boxes, animated bird and plane models, and sky background.",
+            "Optimized 3D rendering for mobile devices, implemented Suspense for async model loading, and managed performance with frame-by-frame animations using useFrame hook.",
+            "Integrated EmailJS for contact form, Framer Motion for UI animations, and GSAP for complex geometry animations.",
+        ],
+        href: "",
+        logo: "",
+        image: "/assets/projects/portfolio-3d.jpg",
+        tags: [
+            {
+                id: 1,
+                name: "React",
+                path: "/assets/logos/react.svg",
+            },
+            {
+                id: 2,
+                name: "Three.js",
+                path: "/assets/logos/threejs.svg",
+            },
+            {
+                id: 3,
+                name: "Vite",
                 path: "/assets/logos/vitejs.svg",
             },
             {

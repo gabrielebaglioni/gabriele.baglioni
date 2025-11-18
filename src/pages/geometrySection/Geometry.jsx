@@ -31,7 +31,7 @@ function getRandomMaterial() {
 }
 
 
-const Geometry = ({ position, geometry, rate }) => {
+const Geometry = ({ position, geometry, rate, shouldAnimate }) => {
     const meshRef = useRef();
     const [visible, setVisible] = useState(false);
     
@@ -68,7 +68,7 @@ const Geometry = ({ position, geometry, rate }) => {
     };
 
     useEffect(() => {
-        if (meshRef.current) {
+        if (meshRef.current && shouldAnimate) {
             setVisible(true);
             gsap.fromTo(
                 meshRef.current.scale,
@@ -83,7 +83,7 @@ const Geometry = ({ position, geometry, rate }) => {
                 }
             );
         }
-    }, []);
+    }, [shouldAnimate]);
 
     return (
         <group position={position.map((p) => p * 2)}>

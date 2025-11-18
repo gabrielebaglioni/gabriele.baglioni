@@ -18,11 +18,13 @@ const GridLayout = () => {
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
            alt="A point-of-view image of hands on a keyboard, coding."/>
           <div className="z-10">
-          
-            <p className="subtext">
+          <p className="text-center headtext">
+              Talk about decentralization
+            </p>
+            <p className="text-center subtext">
               Over the last 4 years, I've developed expertise in blockchain development, 
               smart contracts, and Web3 architectures. I build decentralized applications 
-              that combine traditional software engineering with cutting-edge blockchain technology.
+              that combine traditional software engineering with cutting-edge blockchain technology.  
             </p>
           </div>
           <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
@@ -93,12 +95,11 @@ const GridLayout = () => {
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Talk about decentralization
-            </p>
+            
             <p className="text-center subtext px-4">
-              Building trustless systems, smart contracts, and decentralized protocols. 
-              Exploring DeFi, NFTs, and the future of Web3 infrastructure.
+            Over the last 4 years, I've developed expertise in blockchain development, 
+              smart contracts, and Web3 architectures. I build decentralized applications 
+              that combine traditional software engineering with cutting-edge blockchain technology.
             </p>
           </div>
         </div>

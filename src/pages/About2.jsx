@@ -14,13 +14,13 @@ const About2 = () => {
             <div className='relative z-0 bg-primary'>
                 <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
                     <Hero />
+                    <StarsCanvas />
                 </div>
                 <div className='relative z-0'>
                     <About />
                     <Experience />
                     <Tech />
                     <Contact />
-                    <StarsCanvas />
                     <div className="container mx-auto px-4 flex justify-center pb-4">
                         <CTA />
                     </div>

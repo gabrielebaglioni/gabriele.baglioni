@@ -5,6 +5,7 @@ import { Suspense, useRef, useState } from "react";
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
+import { StarsCanvas } from "../components/index2.js";
 
 const Contact = () => {
   const formRef = useRef();
@@ -72,7 +73,8 @@ const Contact = () => {
   };
 
   return (
-    <section className='animated-bg min-h-screen '>
+    <section className='animated-bg min-h-screen relative'>
+        <StarsCanvas />
         <div className='relative flex lg:flex-row flex-col max-container' >
       {alert.show && <Alert {...alert} />}
 
