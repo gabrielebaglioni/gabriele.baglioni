@@ -12,13 +12,13 @@ const AboutMeWrapper = () => {
     <section className='container mx-auto max-w-7xl relative'>
         <ParallaxBackground />
         <HeroAboutMe />
-        <div className='relative'>
+       
           <StarsCanvas />
           <GridLayout/>
           <ColorfulGeometry />
           <MySideProject />
           <CTA />
-        </div>
+
     </section>
   );
 };
