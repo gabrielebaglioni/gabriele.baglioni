@@ -19,10 +19,11 @@ const GridLayout = () => {
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
            alt="A point-of-view image of hands on a keyboard, coding."/>
           <div className="z-10">
-            <p className="headtext">tolk about blockchain</p>
+            <p className="headtext">Talk about blockchain</p>
             <p className="subtext">
-              Over the last 4 years, I developed my frontend and backend dev
-              skills to deliver dynamic and software and web applications.
+              Over the last 4 years, I've developed expertise in blockchain development, 
+              smart contracts, and Web3 architectures. I build decentralized applications 
+              that combine traditional software engineering with cutting-edge blockchain technology.
             </p>
           </div>
           <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
@@ -63,17 +64,17 @@ const GridLayout = () => {
             />
             <Card
               style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="assets/logos/csharp-pink.png"
+              text="ETH"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
+              text="SOLIDITY"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
+              text="WEB3"
               containerRef={grid2Container}
             />
           </div>
@@ -94,18 +95,21 @@ const GridLayout = () => {
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
             <p className="text-center headtext">
-              Tolk about decentralization
+              Talk about decentralization
             </p>
-          
+            <p className="text-center subtext px-4">
+              Building trustless systems, smart contracts, and decentralized protocols. 
+              Exploring DeFi, NFTs, and the future of Web3 infrastructure.
+            </p>
           </div>
         </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
           <div className="z-10 w-[50%]">
-            <p className="headText">Teck Stack</p>
+            <p className="headText">Tech Stack</p>
             <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools taht
-              allow me to build robust and scalable applications
+              I specialize in blockchain technologies, smart contract development, 
+              and Web3 frameworks that allow me to build decentralized and scalable applications
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
