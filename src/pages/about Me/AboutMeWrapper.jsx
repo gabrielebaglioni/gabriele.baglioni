@@ -4,21 +4,17 @@ import HeroAboutMe from "./heroAboutMe.jsx";
 import GridLayout from "./GridLayout.jsx";
 import MySideProject from "./MySideProject.jsx";
 import ParallaxBackground from "../../components/parallaxBackground.jsx";
-import { StarsCanvas } from "../../components/index2.js";
 
 
 const AboutMeWrapper = () => {
   return (
-    <section className='container mx-auto max-w-7xl relative'>
+    <section className='container mx-auto max-w-7xl'>
         <ParallaxBackground />
         <HeroAboutMe />
-       
-         
-          <GridLayout/>
-          <ColorfulGeometry />
-          <MySideProject />
-          <CTA />
-
+        <GridLayout/>
+        <ColorfulGeometry />
+        <MySideProject />
+        <CTA />
     </section>
   );
 };
