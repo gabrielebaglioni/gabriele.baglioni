@@ -13,7 +13,7 @@ const AboutMeWrapper = () => {
         <ParallaxBackground />
         <HeroAboutMe />
        
-          <StarsCanvas />
+         
           <GridLayout/>
           <ColorfulGeometry />
           <MySideProject />
