@@ -10,7 +10,7 @@ const HomeInfo = ({ currentStage }) => {
                 <span className='font-semibold mx-2 text-white'>3D Portfolio</span>
                  🚀
                 <br />
-                Full-Stack Engineer & Web3 Enthusiast🇮🇹
+                Full-Stack Engineer & Web3 🇮🇹
             </h1>
         );
 
@@ -18,7 +18,7 @@ const HomeInfo = ({ currentStage }) => {
         return (
             <div className='info-box'>
                 <p className='font-medium sm:text-xl text-center'>
-                    Built enterprise solutions for Ferragamo & Leonardo Telespazio <br /> using .NET, Angular, Azure & microservices
+                    Built enterprise solutions  <br /> using .NET, Angular, Azure & microservices
                 </p>
 
                 <Link to='/about' className='neo-brutalism-white neo-btn'>
@@ -33,7 +33,7 @@ const HomeInfo = ({ currentStage }) => {
         return (
             <div className='info-box'>
                 <p className='font-medium text-center sm:text-xl'>
-                    Exploring blockchain & AI through Crypt-payment & HouseBlock <br /> Building decentralized systems with Solidity & microservices
+                    Exploring blockchain & AI<br /> Building decentralized systems with Solidity & microservices
                 </p>
 
                 <Link to='/projects' className='neo-brutalism-white neo-btn'>

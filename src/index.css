@@ -547,6 +547,14 @@ body {
     @apply p-6 bg-gradient-to-b from-purple-700 to-purple-300 rounded-2xl;
 
 }
+
+.grid-special-color .headtext {
+    @apply bg-gradient-to-b from-yellow-200 via-white to-yellow-100 bg-clip-text text-transparent font-bold;
+}
+
+.grid-special-color .subtext {
+    @apply text-white/90 font-medium;
+}
 .grid-black-color {
     @apply p-6 bg-gradient-to-tl from-[#3A3A3A] via-[#242424] to-[#3A3A3A] rounded-2xl;
 }
