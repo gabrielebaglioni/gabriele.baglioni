@@ -12,18 +12,24 @@ const About = () => {
   return (
     <section className='max-container'>
       <h1 className='head-text'>
-        Hello, I'm{" "}
+        About{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
-          Gabriele
+          Me
         </span>{" "}
         👋
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Software Engineer based in Italy, specializing in technical
-          education through hands-on learning and building applications.
+          Full-stack software engineer with a foot in enterprise development and another in blockchain, AI, and distributed architectures. 
+          I work on complex projects for clients like Ferragamo and Leonardo Telespazio, and in my spare time I build experimental systems 
+          that combine microservices, automation, and Web3.
+        </p>
+        <p>
+          I started in a digital engineering consultancy as an intern and grew to become a technical lead on critical projects: 
+          from re-engineering legacy .NET applications to complex interfaces for satellite platforms. I'm also pursuing an academic path 
+          in software engineering at a European university to give a solid theoretical foundation to what I do every day in the field.
         </p>
       </div>
 
@@ -50,8 +56,9 @@ const About = () => {
         <h3 className='subhead-text'>Work Experience.</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
-            I've worked with all sorts of companies, leveling up my skills and
-            teaming up with smart people. Here's the rundown:
+            From refactoring legacy .NET monoliths to building frontend architectures for satellite platforms, 
+            I've worked across enterprise contexts while exploring blockchain and AI through personal projects. 
+            Here's my professional journey:
           </p>
         </div>
 

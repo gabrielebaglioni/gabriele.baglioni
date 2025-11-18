@@ -1,14 +1,14 @@
 export const myProjects = [
     {
         id: 1,
-        title: "E-commerce Platform",
+        title: "Crypt-payment",
         description:
-            "Facilitates purchases from international websites like Amazon and eBay, allowing customers to shop from these sites and have products delivered domestically.",
+            "Web3 dApp for decentralized ETH payments. Connect MetaMask, send transactions on Goerli testnet, register transactions on Solidity smart contract, and generate GIFs via Giphy API based on keywords.",
         subDescription: [
-            "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
-            "Implemented secure authentication and database management using ASP.NET Core Identity and Entity Framework Core.",
-            "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
-            "Added payment systems, localization, and product filtering for functionality improvements.",
+            "Built React + Vite frontend with Tailwind CSS, implementing glassmorphism and responsive layout.",
+            "Integrated ethers.js for blockchain interactions, MetaMask wallet connection, and Alchemy RPC provider.",
+            "Developed Solidity smart contract with Hardhat for transaction recording and deployed to Goerli testnet.",
+            "Implemented transaction history viewer, error handling for revert cases, and keyword-based GIF generation.",
         ],
         href: "",
         logo: "",
@@ -16,17 +16,17 @@ export const myProjects = [
         tags: [
             {
                 id: 1,
-                name: "C#",
-                path: "/assets/logos/csharp.svg",
+                name: "React",
+                path: "/assets/logos/react.svg",
             },
             {
                 id: 2,
-                name: ".Net",
-                path: "/assets/logos/dotnet.svg",
+                name: "Solidity",
+                path: "/assets/logos/csharp.svg",
             },
             {
                 id: 3,
-                name: "Ef Core",
+                name: "Web3",
                 path: "/assets/logos/efcore.png",
             },
             {
@@ -38,14 +38,14 @@ export const myProjects = [
     },
     {
         id: 2,
-        title: "Authentication & Authorization System",
+        title: "HouseBlock",
         description:
-            "A secure authentication and authorization system using Auth0 for seamless user management.",
+            "Microservices ecosystem that transforms blockchain information chaos into structured content. Three-layer architecture: Input (scraping, on-chain monitoring), AI (trend analysis, opportunity identification), Content & Publishing (automatic generation and distribution).",
         subDescription: [
-            "Integrated Auth0 for authentication, supporting OAuth, JWT, and multi-factor authentication.",
-            "Implemented role-based access control (RBAC) for fine-grained user permissions.",
-            "Developed a React-based frontend with Tailwind CSS for a sleek user experience.",
-            "Connected to a secure SQLite database for user data storage.",
+            "Designed TypeScript monorepo with pnpm workspaces, 12 Express microservices, each containerized in Docker.",
+            "Implemented Supabase/PostgreSQL with pgvector extension for semantic search and embeddings storage.",
+            "Integrated Redis for shared caching, n8n as event-driven orchestrator for workflows and automations.",
+            "Built Next.js 14 landing page with Three.js 3D scenes and complex animations, deployed via Docker pipelines.",
         ],
         href: "",
         logo: "",
@@ -53,36 +53,36 @@ export const myProjects = [
         tags: [
             {
                 id: 1,
-                name: "Auth0",
-                path: "/assets/logos/auth0.svg",
+                name: "TypeScript",
+                path: "/assets/logos/javascript.svg",
             },
             {
                 id: 2,
-                name: "React",
+                name: "Microservices",
                 path: "/assets/logos/react.svg",
             },
             {
                 id: 3,
-                name: "SQLite",
-                path: "/assets/logos/sqlite.svg",
+                name: "Docker",
+                path: "/assets/logos/git.svg",
             },
             {
                 id: 4,
-                name: "TailwindCSS",
-                path: "/assets/logos/tailwindcss.svg",
+                name: "Next.js",
+                path: "/assets/logos/react.svg",
             },
         ],
     },
     {
         id: 3,
-        title: "Blazor Web App",
+        title: "3D Portfolio Website",
         description:
-            "A modern, interactive web application built with Blazor WebAssembly and .NET Core.",
+            "Interactive 3D portfolio showcasing my work through immersive web experience. Features interactive island scene with mouse/touch rotation, animated 3D models, responsive design, and animated contact form.",
         subDescription: [
-            "Developed a fully interactive Single Page Application (SPA) using Blazor WebAssembly.",
-            "Implemented API interactions using .NET Core for a robust backend.",
-            "Designed responsive UI components with Tailwind CSS for an enhanced UX.",
-            "Integrated SQLite for efficient client-side database storage.",
+            "Built React SPA with Vite, React Three Fiber, and Drei helpers for declarative 3D rendering.",
+            "Implemented interactive island with stage-based info boxes, animated bird and plane models, and sky background.",
+            "Optimized 3D rendering for mobile devices, implemented Suspense for async model loading, and managed performance with frame-by-frame animations using useFrame hook.",
+            "Integrated EmailJS for contact form, Framer Motion for UI animations, and GSAP for complex geometry animations.",
         ],
         href: "",
         logo: "",
@@ -90,18 +90,18 @@ export const myProjects = [
         tags: [
             {
                 id: 1,
-                name: "Blazor",
-                path: "/assets/logos/blazor.svg",
+                name: "React",
+                path: "/assets/logos/react.svg",
             },
             {
                 id: 2,
-                name: ".NET Core",
-                path: "/assets/logos/dotnetcore.svg",
+                name: "Three.js",
+                path: "/assets/logos/threejs.svg",
             },
             {
                 id: 3,
-                name: "SQLite",
-                path: "/assets/logos/sqlite.svg",
+                name: "Vite",
+                path: "/assets/logos/vitejs.svg",
             },
             {
                 id: 4,
@@ -112,14 +112,14 @@ export const myProjects = [
     },
     {
         id: 4,
-        title: "C++ Game Engine",
+        title: "TuttoRifiutoRifiutoTutto",
         description:
-            "A lightweight C++ game engine designed for 2D and 3D game development.",
+            "Angular 18 SPA for complex multimedia artistic catalog. Handles images, videos, audio, and PDFs with unified viewer, responsive Tailwind UI, and Vercel Blob Storage integration.",
         subDescription: [
-            "Built a powerful rendering engine using OpenGL and C++.",
-            "Developed a physics engine with collision detection and particle effects.",
-            "Implemented a scripting system for easy game customization.",
-            "Optimized performance with multi-threading and efficient memory management.",
+            "Architected modular Angular 18 application with Core/Features/Shared structure, using standalone components and Signals for state management.",
+            "Implemented multimedia catalog component with uniform handling of heterogeneous media types and responsive viewer.",
+            "Integrated Vercel Blob Storage for content hosting, IndexedDB via idb for local caching, and Vercel Analytics for tracking.",
+            "Designed scalable base architecture ready for advanced features like filters, searches, and new content types.",
         ],
         href: "",
         logo: "",
@@ -127,92 +127,18 @@ export const myProjects = [
         tags: [
             {
                 id: 1,
-                name: "C++",
-                path: "/assets/logos/cplusplus.svg",
+                name: "Angular",
+                path: "/assets/logos/react.svg",
             },
             {
                 id: 2,
-                name: "C#",
-                path: "/assets/logos/csharp.svg",
+                name: "TypeScript",
+                path: "/assets/logos/javascript.svg",
             },
             {
                 id: 3,
-                name: "Git",
-                path: "/assets/logos/git.svg",
-            },
-            {
-                id: 4,
-                name: "Microsoft",
-                path: "/assets/logos/microsoft.svg",
-            },
-        ],
-    },
-    {
-        id: 5,
-        title: "WordPress Custom Theme",
-        description:
-            "A fully customizable WordPress theme optimized for performance and SEO.",
-        subDescription: [
-            "Developed a responsive WordPress theme using HTML5, CSS3, and JavaScript.",
-            "Integrated Tailwind CSS for modern styling and UI enhancements.",
-            "Optimized SEO and page speed using Vite.js for fast builds.",
-            "Implemented custom widgets and plugin compatibility for extended functionality.",
-        ],
-        href: "",
-        logo: "",
-        image: "/assets/projects/wordpress-theme.jpg",
-        tags: [
-            {
-                id: 1,
-                name: "WordPress",
-                path: "/assets/logos/wordpress.svg",
-            },
-            {
-                id: 2,
-                name: "HTML5",
-                path: "/assets/logos/html5.svg",
-            },
-            {
-                id: 3,
-                name: "CSS3",
-                path: "/assets/logos/css3.svg",
-            },
-            {
-                id: 4,
-                name: "Vite.js",
+                name: "Vercel",
                 path: "/assets/logos/vitejs.svg",
-            },
-        ],
-    },
-    {
-        id: 6,
-        title: "Online Learning Platform",
-        description:
-            "A web application that allows users to enroll in courses, watch video lectures, and take quizzes.",
-        subDescription: [
-            "Built using Blazor WebAssembly for a seamless SPA experience.",
-            "Implemented video streaming with Azure Media Services.",
-            "Added a quiz system with dynamic question generation and real-time grading.",
-            "Integrated Stripe API for secure payment processing.",
-        ],
-        href: "",
-        logo: "",
-        image: "/assets/projects/elearning.jpg",
-        tags: [
-            {
-                id: 1,
-                name: "Blazor",
-                path: "/assets/logos/blazor.svg",
-            },
-            {
-                id: 2,
-                name: "Azure",
-                path: "/assets/logos/azure.svg",
-            },
-            {
-                id: 3,
-                name: "Stripe",
-                path: "/assets/logos/stripe.svg",
             },
             {
                 id: 4,
@@ -243,36 +169,36 @@ export const mySocials = [
 
 export const experiences = [
     {
-        title: "Software Developer",
-        job: "Security & Defense Projects",
-        date: "2021-2023",
+        title: "Software Engineer",
+        job: "Digital Engineering Consultancy",
+        date: "2022 - Present",
         contents: [
-            "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-            "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-            "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-            "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-            "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+            "Started as intern and grew to technical lead on critical enterprise projects.",
+            "Refactored and migrated legacy .NET applications (pre-.NET Core) to modern stack, working with Entity Framework, IIS, and enterprise deployment cycles.",
+            "Developed full-stack solutions using .NET, Angular, and Azure (App Services, Functions, Azure AD).",
+            "Built REST APIs, integrated SQL/NoSQL databases, and implemented authentication with Azure Active Directory (OAuth2 + OpenID Connect).",
         ],
     },
     {
-        title: "Back-End Developer",
-        job: "Car Manufacture",
-        date: "2023-2024",
+        title: "Frontend Architect",
+        job: "Ferragamo",
+        date: "2023",
         contents: [
-            "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-            "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-            "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-            "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-            "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
+            "Led UI architecture and development for end-to-end frontend solution using Angular.",
+            "Designed and implemented database schema, data models, and backend integration.",
+            "Managed authentication flows with Azure AD and authorization mechanisms.",
+            "Collaborated closely with business stakeholders to translate requirements into technical solutions.",
         ],
     },
     {
-        title: "Freelance Developer",
-        job: "Self-Employed",
-        date: "2025-Present",
+        title: "Frontend Lead",
+        job: "Leonardo Telespazio - IRIDE",
+        date: "2024 - Present",
         contents: [
-            "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-            "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+            "Sole external consultant responsible for frontend architecture of critical satellite platform.",
+            "Designed Angular application architecture and integrated with high-complexity APIs.",
+            "Optimized data pipelines between frontend, backend, and microservices.",
+            "Worked with microservices, Docker, Kubernetes, and CI/CD pipelines (Azure DevOps, GitLab CI) across multi-stage environments.",
         ],
     },
 ];

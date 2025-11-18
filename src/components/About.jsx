@@ -47,11 +47,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        I'm a full-stack software engineer with strong experience in enterprise development (.NET, Angular, Azure) 
+        and a deep interest in blockchain, AI, and distributed architectures. I've worked on projects ranging from 
+        legacy .NET refactoring to frontend architecture for satellite platforms (Leonardo Telespazio - IRIDE), and I 
+        build experimental Web3 systems in my spare time. I design systems, understand constraints, and then get my 
+        hands dirty implementing them.
       </motion.p>
 
       {/*<div className='mt-20 flex flex-wrap gap-10'>

@@ -24,6 +24,7 @@ import {
     tripguide,
     threejs,
 } from "../assets";
+import { nextjs, express } from "../assets/icons";
 
 export const navLinks = [
     {
@@ -61,110 +62,97 @@ const services = [
 
 const technologies = [
     {
-        name: "HTML 5",
-        icon: html,
-    },
-    {
-        name: "CSS 3",
-        icon: css,
+        name: "TypeScript",
+        icon: typescript,
     },
     {
         name: "JavaScript",
         icon: javascript,
     },
     {
-        name: "TypeScript",
-        icon: typescript,
-    },
-    {
-        name: "React JS",
+        name: "React",
         icon: reactjs,
     },
     {
-        name: "Redux Toolkit",
-        icon: redux,
+        name: "Next.js",
+        icon: nextjs,
+    },
+    {
+        name: "Node.js",
+        icon: nodejs,
+    },
+    {
+        name: "Express",
+        icon: express,
     },
     {
         name: "Tailwind CSS",
         icon: tailwind,
     },
     {
-        name: "Node JS",
-        icon: nodejs,
+        name: "Three.js",
+        icon: threejs,
     },
     {
         name: "MongoDB",
         icon: mongodb,
     },
     {
-        name: "Three JS",
-        icon: threejs,
-    },
-    {
-        name: "git",
+        name: "Git",
         icon: git,
     },
     {
-        name: "figma",
-        icon: figma,
+        name: "Docker",
+        icon: docker,
     },
     {
-        name: "docker",
-        icon: docker,
+        name: "HTML",
+        icon: html,
+    },
+    {
+        name: "CSS",
+        icon: css,
     },
 ];
 
 const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
-        icon: starbucks,
-        iconBg: "#383E56",
-        date: "March 2020 - April 2021",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "React Native Developer",
-        company_name: "Tesla",
-        icon: tesla,
-        iconBg: "#E6DEDD",
-        date: "Jan 2021 - Feb 2022",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Web Developer",
-        company_name: "Shopify",
-        icon: shopify,
-        iconBg: "#383E56",
-        date: "Jan 2022 - Jan 2023",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "Meta",
+        title: "Software Engineer",
+        company_name: "Digital Engineering Consultancy",
         icon: meta,
-        iconBg: "#E6DEDD",
-        date: "Jan 2023 - Present",
+        iconBg: "#383E56",
+        date: "2022 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Started as intern and grew to technical lead on critical enterprise projects.",
+            "Refactored and migrated legacy .NET applications (pre-.NET Core) to modern stack, working with Entity Framework, IIS, and enterprise deployment cycles.",
+            "Developed full-stack solutions using .NET, Angular, and Azure (App Services, Functions, Azure AD).",
+            "Built REST APIs, integrated SQL/NoSQL databases, and implemented authentication with Azure Active Directory (OAuth2 + OpenID Connect).",
+        ],
+    },
+    {
+        title: "Frontend Architect",
+        company_name: "Ferragamo",
+        icon: shopify,
+        iconBg: "#E6DEDD",
+        date: "2023",
+        points: [
+            "Led UI architecture and development for end-to-end frontend solution using Angular.",
+            "Designed and implemented database schema, data models, and backend integration.",
+            "Managed authentication flows with Azure AD and authorization mechanisms.",
+            "Collaborated closely with business stakeholders to translate requirements into technical solutions.",
+        ],
+    },
+    {
+        title: "Frontend Lead",
+        company_name: "Leonardo Telespazio - IRIDE",
+        icon: tesla,
+        iconBg: "#383E56",
+        date: "2024 - Present",
+        points: [
+            "Sole external consultant responsible for frontend architecture of critical satellite platform.",
+            "Designed Angular application architecture and integrated with high-complexity APIs.",
+            "Optimized data pipelines between frontend, backend, and microservices.",
+            "Worked with microservices, Docker, Kubernetes, and CI/CD pipelines (Azure DevOps, GitLab CI) across multi-stage environments.",
         ],
     },
 ];
@@ -198,20 +186,20 @@ const testimonials = [
 
 const projects = [
     {
-        name: "Car Rent",
+        name: "Crypt-payment",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+            "Web3 dApp for decentralized ETH payments. Built with React + Vite, integrates MetaMask, Solidity smart contracts, and Giphy API. Features transaction history, keyword-based GIF generation, and full Web3 wallet integration.",
         tags: [
             {
                 name: "react",
                 color: "blue-text-gradient",
             },
             {
-                name: "mongodb",
+                name: "solidity",
                 color: "green-text-gradient",
             },
             {
-                name: "tailwind",
+                name: "web3",
                 color: "pink-text-gradient",
             },
         ],
@@ -219,20 +207,20 @@ const projects = [
         source_code_link: "https://github.com/",
     },
     {
-        name: "Job IT",
+        name: "HouseBlock",
         description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+            "Microservices ecosystem for blockchain data processing. 12 Express services in TypeScript monorepo, AI-powered content generation, Supabase/PostgreSQL with pgvector, Redis caching, n8n orchestration, and Next.js landing with Three.js.",
         tags: [
             {
-                name: "react",
+                name: "microservices",
                 color: "blue-text-gradient",
             },
             {
-                name: "restapi",
+                name: "ai",
                 color: "green-text-gradient",
             },
             {
-                name: "scss",
+                name: "blockchain",
                 color: "pink-text-gradient",
             },
         ],
@@ -240,24 +228,45 @@ const projects = [
         source_code_link: "https://github.com/",
     },
     {
-        name: "Trip Guide",
+        name: "3D Portfolio",
         description:
-            "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+            "Interactive 3D portfolio website built with React, React Three Fiber, and Three.js. Features interactive island scene, animated 3D models, responsive design, and EmailJS integration. Optimized for performance and mobile devices.",
         tags: [
             {
-                name: "nextjs",
+                name: "react",
                 color: "blue-text-gradient",
             },
             {
-                name: "supabase",
+                name: "threejs",
                 color: "green-text-gradient",
             },
             {
-                name: "css",
+                name: "vite",
                 color: "pink-text-gradient",
             },
         ],
         image: tripguide,
+        source_code_link: "https://github.com/",
+    },
+    {
+        name: "TuttoRifiutoRifiutoTutto",
+        description:
+            "Angular 18 SPA for multimedia artistic catalog. Modular architecture (Core/Features/Shared), standalone components, Signals, Vercel Blob Storage integration, IndexedDB caching, and fully responsive Tailwind UI.",
+        tags: [
+            {
+                name: "angular",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "typescript",
+                color: "green-text-gradient",
+            },
+            {
+                name: "vercel",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: carrent,
         source_code_link: "https://github.com/",
     },
 ];
