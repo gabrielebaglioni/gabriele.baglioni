@@ -473,12 +473,18 @@ body:has(.card[data-color="green"]:hover) {
         }
     }
 }
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 body {
     background: #030412;
     font-family: "Funnel Display", sans-serif;
     color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .c-space {
