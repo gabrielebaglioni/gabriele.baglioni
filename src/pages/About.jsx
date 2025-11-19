@@ -71,13 +71,17 @@ const About = () => {
                 date={experience.date}
                 iconStyle={{ background: experience.iconBg }}
                 icon={
+                  experience.icon ? (
                   <div className='flex justify-center items-center w-full h-full'>
                     <img
                       src={experience.icon}
                       alt={experience.company_name}
-                      className='w-[60%] h-[60%] object-contain'
+                        className='w-[60%] h-[60%] object-contain transition-transform hover:scale-110 duration-200'
                     />
                   </div>
+                  ) : (
+                    <div className='w-full h-full' />
+                  )
                 }
                 contentStyle={{
                   borderBottom: "8px",

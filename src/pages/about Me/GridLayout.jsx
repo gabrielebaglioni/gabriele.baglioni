@@ -377,13 +377,13 @@ const GridLayout = () => {
           >
             <div className="flex flex-col items-center justify-start gap-2 w-full">
               <p className="text-center subtext leading-relaxed text-xs sm:text-sm md:text-base">
-                Over the last 4 years, I've developed expertise in blockchain development, 
+            Over the last 4 years, I've developed expertise in blockchain development, 
                 smart contracts, and Web3 architectures.
               </p>
               <p className="text-center subtext leading-relaxed mt-2 text-xs sm:text-sm md:text-base">
                 I build decentralized applications that combine traditional software engineering 
                 with cutting-edge blockchain technology.
-              </p>
+            </p>
               <p className="text-center subtext leading-relaxed mt-2 text-xs sm:text-sm md:text-base">
                 My work focuses on creating secure, scalable solutions that leverage the power 
                 of decentralized networks to solve real-world problems.

@@ -60,6 +60,8 @@ const ParallaxBackground = () => {
                         y: mountain1Y,
                     }}
                 />
+                {/* Overlay leggero per non nascondere effetti parallax */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/40 z-0" />
             </div>
         </section>
     );

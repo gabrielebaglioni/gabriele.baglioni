@@ -14,6 +14,13 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
+  // Log iniziale per verificare configurazione EmailJS
+  console.log("📧 [Contact] Componente montato");
+  console.log("📧 [Contact] EmailJS Environment Variables:");
+  console.log("  - VITE_APP_EMAILJS_SERVICE_ID:", import.meta.env.VITE_APP_EMAILJS_SERVICE_ID ? "✅ Caricato" : "❌ Non trovato");
+  console.log("  - VITE_APP_EMAILJS_TEMPLATE_ID:", import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID ? "✅ Caricato" : "❌ Non trovato");
+  console.log("  - VITE_APP_EMAILJS_PUBLIC_KEY:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY ? "✅ Caricato" : "❌ Non trovato");
+
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
@@ -23,24 +30,46 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("📧 [Contact] Form submit iniziato");
+    console.log("📧 [Contact] Form data:", form);
+    
     setLoading(true);
     setCurrentAnimation("hit");
 
+    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
+    console.log("📧 [Contact] EmailJS Config:");
+    console.log("  - Service ID:", serviceId ? "✅ Presente" : "❌ Mancante");
+    console.log("  - Template ID:", templateId ? "✅ Presente" : "❌ Mancante");
+    console.log("  - Public Key:", publicKey ? "✅ Presente" : "❌ Mancante");
+
+    const templateParams = {
+      from_name: form.name,
+      to_name: "Gabriele Baglioni",
+      from_email: form.email,
+      to_email: "gabrielebaglioni55@gmail.com",
+      message: form.message,
+    };
+
+    console.log("📧 [Contact] Template params:", templateParams);
+    console.log("📧 [Contact] Invio email in corso...");
+
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Gabriele Baglioni",
-          from_email: form.email,
-          to_email: "gabriele.baglioni@example.com",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
       )
       .then(
-        () => {
+        (response) => {
+          console.log("✅ [Contact] Email inviata con successo!");
+          console.log("📧 [Contact] Response:", response);
+          console.log("📧 [Contact] Status:", response.status);
+          console.log("📧 [Contact] Text:", response.text);
+          
           setLoading(false);
           showAlert({
             show: true,
@@ -56,11 +85,18 @@ const Contact = () => {
               email: "",
               message: "",
             });
+            console.log("📧 [Contact] Form resettato");
           }, [3000]);
         },
         (error) => {
+          console.error("❌ [Contact] Errore invio email:", error);
+          console.error("❌ [Contact] Error details:", {
+            status: error.status,
+            text: error.text,
+            message: error.message,
+          });
+          
           setLoading(false);
-          console.error(error);
           setCurrentAnimation("idle");
 
           showAlert({

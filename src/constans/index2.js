@@ -13,10 +13,6 @@ import {
     mongodb,
     git,
     docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
     carrent,
     jobit,
     tripguide,
@@ -117,7 +113,7 @@ const experiences = [
     {
         title: "Software Engineer Intern → Junior Developer",
         company_name: "Digital Engineering Consultancy",
-        icon: meta,
+        icon: null,
         iconBg: "#383E56",
         date: "2021",
         points: [
@@ -133,7 +129,7 @@ const experiences = [
     {
         title: "Frontend Architect",
         company_name: "External Consultant - Ferragamo",
-        icon: shopify,
+        icon: null,
         iconBg: "#E6DEDD",
         date: "2021 - 2022",
         points: [
@@ -146,7 +142,7 @@ const experiences = [
     {
         title: "Frontend Architect / Technical Lead",
         company_name: "External Consultant - Leonardo Telespazio - IRIDE",
-        icon: tesla,
+        icon: null,
         iconBg: "#383E56",
         date: "2022 - 2025",
         points: [
@@ -162,8 +158,8 @@ const experiences = [
     {
         title: "Software Engineering Student & Independent Developer",
         company_name: "European University & Personal Projects",
-        icon: starbucks,
-        iconBg: "#ffd6a5",
+        icon: null, // Usa solo colore blu, nessuna icona
+        iconBg: "#3B82F6", // Blu Tailwind
         date: "2025 - Present",
         points: [
             "Pursuing academic path in software engineering at a European university to provide solid theoretical foundation to daily field work.",

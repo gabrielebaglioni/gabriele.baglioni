@@ -29,23 +29,45 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("📧 [Contact Component] Form submit iniziato");
+    console.log("📧 [Contact Component] Form data:", form);
+    
     setLoading(true);
+
+    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
+    console.log("📧 [Contact Component] EmailJS Config:");
+    console.log("  - Service ID:", serviceId ? "✅ Presente" : "❌ Mancante");
+    console.log("  - Template ID:", templateId ? "✅ Presente" : "❌ Mancante");
+    console.log("  - Public Key:", publicKey ? "✅ Presente" : "❌ Mancante");
+
+    const templateParams = {
+      from_name: form.name,
+      to_name: "Gabriele Baglioni",
+      from_email: form.email,
+      to_email: "gabrielebaglioni55@gmail.com",
+      message: form.message,
+    };
+
+    console.log("📧 [Contact Component] Template params:", templateParams);
+    console.log("📧 [Contact Component] Invio email in corso...");
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
       )
       .then(
-        () => {
+        (response) => {
+          console.log("✅ [Contact Component] Email inviata con successo!");
+          console.log("📧 [Contact Component] Response:", response);
+          console.log("📧 [Contact Component] Status:", response.status);
+          console.log("📧 [Contact Component] Text:", response.text);
+          
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
 
@@ -54,11 +76,17 @@ const Contact = () => {
             email: "",
             message: "",
           });
+          console.log("📧 [Contact Component] Form resettato");
         },
         (error) => {
+          console.error("❌ [Contact Component] Errore invio email:", error);
+          console.error("❌ [Contact Component] Error details:", {
+            status: error.status,
+            text: error.text,
+            message: error.message,
+          });
+          
           setLoading(false);
-          console.error(error);
-
           alert("Ahh, something went wrong. Please try again.");
         }
       );
