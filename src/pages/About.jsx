@@ -28,8 +28,9 @@ const About = () => {
         </p>
         <p>
           I started in a digital engineering consultancy as an intern and grew to become a technical lead on critical projects: 
-          from re-engineering legacy .NET applications to complex interfaces for satellite platforms. I'm also pursuing an academic path 
-          in software engineering at a European university to give a solid theoretical foundation to what I do every day in the field.
+          from re-engineering legacy .NET applications to complex interfaces for satellite platforms. Currently, I'm pursuing an academic path 
+          in software engineering at a European university while continuing to develop personal projects in AI and blockchain, combining 
+          theoretical knowledge with hands-on practice.
         </p>
       </div>
 
@@ -58,7 +59,7 @@ const About = () => {
           <p>
             From refactoring legacy .NET monoliths to building frontend architectures for satellite platforms, 
             I've worked across enterprise contexts while exploring blockchain and AI through personal projects. 
-            Here's my professional journey:
+            Here's my professional journey, from my first steps as an intern to my current academic and independent development work:
           </p>
         </div>
 
