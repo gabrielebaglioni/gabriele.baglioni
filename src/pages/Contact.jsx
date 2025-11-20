@@ -16,10 +16,23 @@ const Contact = () => {
 
   // Log iniziale per verificare configurazione EmailJS
   console.log("📧 [Contact] Componente montato");
+  console.log("📧 [Contact] Ambiente:", import.meta.env.MODE);
   console.log("📧 [Contact] EmailJS Environment Variables:");
-  console.log("  - VITE_APP_EMAILJS_SERVICE_ID:", import.meta.env.VITE_APP_EMAILJS_SERVICE_ID ? "✅ Caricato" : "❌ Non trovato");
-  console.log("  - VITE_APP_EMAILJS_TEMPLATE_ID:", import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID ? "✅ Caricato" : "❌ Non trovato");
-  console.log("  - VITE_APP_EMAILJS_PUBLIC_KEY:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY ? "✅ Caricato" : "❌ Non trovato");
+  const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+  console.log("  - VITE_APP_EMAILJS_SERVICE_ID:", serviceId ? `✅ Caricato (${serviceId.substring(0, 10)}...)` : "❌ Non trovato");
+  console.log("  - VITE_APP_EMAILJS_TEMPLATE_ID:", templateId ? `✅ Caricato (${templateId.substring(0, 10)}...)` : "❌ Non trovato");
+  console.log("  - VITE_APP_EMAILJS_PUBLIC_KEY:", publicKey ? `✅ Caricato (${publicKey.substring(0, 10)}...)` : "❌ Non trovato");
+  
+  // Avviso se le variabili non sono caricate (solo in produzione)
+  if (import.meta.env.MODE === 'production' && (!serviceId || !templateId || !publicKey)) {
+    console.error("❌ [Contact] ATTENZIONE: Variabili EmailJS non configurate in produzione!");
+    console.error("❌ [Contact] Configura le variabili d'ambiente su Vercel:");
+    console.error("   - VITE_APP_EMAILJS_SERVICE_ID");
+    console.error("   - VITE_APP_EMAILJS_TEMPLATE_ID");
+    console.error("   - VITE_APP_EMAILJS_PUBLIC_KEY");
+  }
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
